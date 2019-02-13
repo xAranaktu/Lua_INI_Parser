@@ -41,7 +41,7 @@ function LIP.load(fileName)
 		end
 		local param, value = line:match('^([%w|_]+)%s-=%s-(.+)$');
 		if(param and value ~= nil)then
-			if(tonumber(value))then
+			if(tonumber(value) and tonumber(value) ~= 1/0)then
 				value = tonumber(value);
 			elseif(value == 'true')then
 				value = true;
